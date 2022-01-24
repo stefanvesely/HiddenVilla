@@ -56,3 +56,7 @@ C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\ref\
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\HiddenVilla_Server.pdb
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\HiddenVilla_Server.genruntimeconfig.cache
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\HiddenVilla_Server.csproj.CopyComplete
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\PageExamples\BindProperty.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\BindProperty.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\PageExamples\HotelDemo.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\HotelDemo.razor.g.cs

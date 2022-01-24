@@ -1,0 +1,63 @@
+﻿@page "/HotelDemo"
+@using Model;
+
+<h3> We will display hotel rooms and amenities here!</h3>
+<div class="border p-2 mt-2" style="background-color:azure">
+	<h2 class="text-info"> Room List [USING COMPONENT]</h2>
+	<div class="row container">
+		@foreach(var Room in RoomsList)
+		{
+		<div class="bg-light border p-2 col-5">
+			<h4 class="text-secondary"> Room - @Room.Id</h4>
+			@Room.RoomName<br />
+			@Room.Price.ToString("c")<br />
+			<input type="checkbox" @bind-value="Room.IsActive" checked="("/> &nbsp; IsActive<br/>
+			<span>This Room is @(Room.IsActive?"Active":"InActive")</span><br />
+			@if (Room.IsActive)
+				{
+					@foreach(var RoomProperty in Room.RoomProps)
+					{
+						<p>@RoomProperty.Name - @RoomProperty.Value</p>
+					}
+				}
+				<input type ="button" class="btn btn-danger" value="Delete"/>
+				<input type ="button" class="btn btn-success" value="Edit"/>
+		</div>
+		}
+	</div>
+</div>
+@code
+{
+	List<BlazorRoom> RoomsList = new List<BlazorRoom>();
+	
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		RoomsList.Add(new BlazorRoom()
+		{
+			Id = 1,
+			RoomName = "Suite1",
+			IsActive = true,
+			Price = 499,
+			RoomProps = new List<RoomProperites>
+			{
+				new RoomProperites{Id=1, Name="Footage", Value ="100"},
+				new RoomProperites{Id=2, Name="Occupancy", Value ="3"}
+			}
+
+		});
+		RoomsList.Add(new BlazorRoom()
+		{
+			Id = 2,
+			RoomName = "Suit2",
+			IsActive = true,
+			Price = 1009,
+			RoomProps = new List<RoomProperites>
+			{
+				new RoomProperites{Id=1, Name="Footage", Value ="200"},
+				new RoomProperites{Id=2, Name="Occupancy", Value ="6"}
+			}
+
+		});
+	}
+}

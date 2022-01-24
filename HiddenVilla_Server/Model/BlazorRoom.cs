@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace HiddenVilla_Server.Model
 {
@@ -11,8 +8,6 @@ namespace HiddenVilla_Server.Model
         public string RoomName { get; set; }
         public decimal Price { get; set; }
         public bool IsActive { get; set; }
-
         public List<RoomProperites> RoomProps { get; set; }
-        
     }
 }

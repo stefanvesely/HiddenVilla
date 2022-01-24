@@ -90,7 +90,7 @@ using HiddenVilla_Server.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Shared\NavMenu.razor"
+#line 38 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

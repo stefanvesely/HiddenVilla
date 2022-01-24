@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HiddenVilla_Server.Pages
+namespace HiddenVilla_Server.Pages.PageExamples
 {
     #line hidden
     using System;
@@ -83,20 +83,59 @@ using HiddenVilla_Server.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\Index.razor"
+#line 2 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
 using Model;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/HotelDemo")]
+    public partial class HotelDemo : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 30 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
+ 
+	List<BlazorRoom> RoomsList = new List<BlazorRoom>();
+	
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+		RoomsList.Add(new BlazorRoom()
+		{
+			Id = 1,
+			RoomName = "Suite1",
+			IsActive = true,
+			Price = 499,
+			RoomProps = new List<RoomProperites>
+			{
+				new RoomProperites{Id=1, Name="Footage", Value ="100"},
+				new RoomProperites{Id=2, Name="Occupancy", Value ="3"}
+			}
+
+		});
+		RoomsList.Add(new BlazorRoom()
+		{
+			Id = 2,
+			RoomName = "Suit2",
+			IsActive = true,
+			Price = 1009,
+			RoomProps = new List<RoomProperites>
+			{
+				new RoomProperites{Id=1, Name="Footage", Value ="200"},
+				new RoomProperites{Id=2, Name="Occupancy", Value ="6"}
+			}
+
+		});
+	}
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591
