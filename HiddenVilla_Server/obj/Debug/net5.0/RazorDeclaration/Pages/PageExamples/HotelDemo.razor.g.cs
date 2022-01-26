@@ -96,13 +96,6 @@ using HiddenVilla_Server.Model;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
-using Model;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/HotelDemo")]
     public partial class HotelDemo : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -114,6 +107,7 @@ using Model;
 #nullable restore
 #line 25 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
  
+	public int RoomsSelected = 0;
 	List<BlazorRoom> RoomsList = new List<BlazorRoom>();
 	List<BlazorAmenities> AmenityList = new List<BlazorAmenities>();
 	protected override void OnInitialized()
@@ -164,6 +158,18 @@ using Model;
 			Name = "Free Breakfast",
             Description = "Nom nom in da' morning, nom nom till you be full Yo!"			
 		});
+	}
+
+	protected void RoomSelectionCounterChanged(bool isRoomSelected)
+	{
+		if (isRoomSelected)
+		{
+			RoomsSelected++;
+		}
+		else
+		{
+			RoomsSelected--;
+		}
 	}
 
 #line default

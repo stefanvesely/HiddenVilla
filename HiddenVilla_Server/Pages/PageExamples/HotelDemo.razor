@@ -1,5 +1,4 @@
 ﻿@page "/HotelDemo"
-@using Model;
 
 <h3> We will display hotel rooms and amenities here!</h3>
 <div class="border p-2 mt-2" style="background-color:azure">
@@ -7,10 +6,11 @@
 	<div class="row container">
 		<div class="col-12">
 			<h4 class="text-info">Hotel Room's</h4>
+			<span>Rooms Selected - @RoomsSelected</span>
 		</div>
 		@foreach(var Room in RoomsList)
 		{
-			<RoomComponent Room="@Room"></RoomComponent>			
+			<RoomComponent OnRoomCheckBoxSelection="RoomSelectionCounterChanged" Room="@Room"></RoomComponent>			
 		}
 		<div class="col-12 mt-4">
 			<h4 class="text-info">Hotel Amenities[assinment]</h4>
@@ -23,6 +23,7 @@
 </div>
 @code
 {
+	public int RoomsSelected = 0;
 	List<BlazorRoom> RoomsList = new List<BlazorRoom>();
 	List<BlazorAmenities> AmenityList = new List<BlazorAmenities>();
 	protected override void OnInitialized()
@@ -73,5 +74,17 @@
 			Name = "Free Breakfast",
             Description = "Nom nom in da' morning, nom nom till you be full Yo!"			
 		});
+	}
+
+	protected void RoomSelectionCounterChanged(bool isRoomSelected)
+	{
+		if (isRoomSelected)
+		{
+			RoomsSelected++;
+		}
+		else
+		{
+			RoomsSelected--;
+		}
 	}
 }

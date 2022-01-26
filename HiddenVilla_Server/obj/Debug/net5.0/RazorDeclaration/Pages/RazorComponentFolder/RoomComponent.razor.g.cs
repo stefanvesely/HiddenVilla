@@ -104,10 +104,17 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\RoomComponent.razor"
+#line 18 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\RoomComponent.razor"
        
 	[Parameter]
 	public BlazorRoom Room { get; set; }
+    [Parameter]
+	public EventCallback<bool> OnRoomCheckBoxSelection {get;set;}
+
+	protected async Task RoomCheckBoxSelectionChanged(ChangeEventArgs e)
+	{
+		await OnRoomCheckBoxSelection.InvokeAsync((bool)e.Value);
+	}
 
 #line default
 #line hidden
