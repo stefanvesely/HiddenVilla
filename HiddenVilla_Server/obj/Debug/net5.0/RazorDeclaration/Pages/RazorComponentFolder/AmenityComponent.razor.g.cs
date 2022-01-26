@@ -108,6 +108,13 @@ using HiddenVilla_Server.Model;
        
 	[Parameter]
 	public BlazorAmenities Amenity { get; set; }
+    [Parameter]
+	public EventCallback<string> OnAmenitySelection { get; set; }
+
+	protected async Task AmenitySelctionChanged(MouseEventArgs e, string Name)
+	{
+		await OnAmenitySelection.InvokeAsync(Name.ToString());
+	}
 
 #line default
 #line hidden

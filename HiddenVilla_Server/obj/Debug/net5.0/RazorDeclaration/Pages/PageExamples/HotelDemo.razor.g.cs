@@ -105,9 +105,10 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
+#line 28 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
  
 	public int RoomsSelected = 0;
+	public string SelectedAmenity { get; set; } = "";
 	List<BlazorRoom> RoomsList = new List<BlazorRoom>();
 	List<BlazorAmenities> AmenityList = new List<BlazorAmenities>();
 	protected override void OnInitialized()
@@ -170,6 +171,11 @@ using HiddenVilla_Server.Model;
 		{
 			RoomsSelected--;
 		}
+	}
+
+	protected void AmenitySelectionChanged(string AmenityName)
+	{
+		SelectedAmenity = AmenityName;
 	}
 
 #line default
