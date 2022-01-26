@@ -60,3 +60,15 @@ C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razo
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\BindProperty.razor.g.cs
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\PageExamples\HotelDemo.razor.g.cs
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\HotelDemo.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\EditDeleteButton.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\EditDeleteButton.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\RoomComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\RoomComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\AmenityComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\AmenityComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\LifeCycle.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\PageExamples\LifeCycle.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\LifeCycleComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\LifeCycle.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\LifeCycle.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\LifeCycleComponent.razor.g.cs

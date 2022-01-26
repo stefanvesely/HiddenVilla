@@ -1,0 +1,24 @@
+﻿
+
+<h1>Life Cycle Component</h1>
+
+@foreach(var item in EvenType)
+{
+    @item
+    <hr/>
+}
+
+@code {
+    [Parameter]
+    public int CountValue { get; set; }
+    List<string> EvenType = new List<string>();
+    
+    protected override void OnInitialized()
+    {
+        EvenType.Add("Child: On Init Normal is called");
+    }
+    protected override void OnParametersSet()
+    {
+       EvenType.Add("Child: On ParamSet is called");
+    }
+}

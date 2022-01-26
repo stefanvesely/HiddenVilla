@@ -83,6 +83,20 @@ using HiddenVilla_Server.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using HiddenVilla_Server.Pages.RazorComponentFolder;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using HiddenVilla_Server.Model;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
 using Model;
 
@@ -98,10 +112,10 @@ using Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
+#line 25 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
  
 	List<BlazorRoom> RoomsList = new List<BlazorRoom>();
-	
+	List<BlazorAmenities> AmenityList = new List<BlazorAmenities>();
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
@@ -130,6 +144,25 @@ using Model;
 				new RoomProperites{Id=2, Name="Occupancy", Value ="6"}
 			}
 
+		});
+
+		AmenityList.Add(new BlazorAmenities()
+		{
+			Id = 1,
+			Name = "Gym",
+            Description = "24X7 Gym"			
+		});
+		AmenityList.Add(new BlazorAmenities()
+		{
+			Id = 2,
+			Name = "Pool",
+            Description = "There is an indoor pool open from 6pm till 10am"			
+		});
+		AmenityList.Add(new BlazorAmenities()
+		{
+			Id = 3,
+			Name = "Free Breakfast",
+            Description = "Nom nom in da' morning, nom nom till you be full Yo!"			
 		});
 	}
 

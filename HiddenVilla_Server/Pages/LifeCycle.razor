@@ -1,0 +1,82 @@
+﻿@page "/LifeCycle"
+@using System.Threading
+
+<h1>Life Cycle</h1>
+<div class="border">
+    <LifeCycleComponent CountValue="@currentCount"></LifeCycleComponent>
+</div>
+
+<p>Counter Checker: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<br />
+@count - Countdown
+<button  @onclick=StartCountDown>Countdown Button</button>
+<br />
+@foreach(var item in EvenType)
+{
+    @item
+    <hr/>
+}
+
+@code {
+    private int currentCount = 0;
+    private int count { get; set; } = 5;
+    List<string> EvenType = new List<string>();
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    protected override void OnInitialized()
+    {
+        EvenType.Add("On Init Normal is called");
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        EvenType.Add("On Init Async is called");
+        await Task.Delay(1000);
+    }
+     protected override void OnParametersSet()
+    {
+       EvenType.Add("On ParamSet is called");
+    }
+     protected override async Task OnParametersSetAsync()
+    {
+       EvenType.Add("On ParamSet is called");
+        await Task.Delay(1000);
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            currentCount = 111;
+        }
+        else
+        {
+            currentCount = 222;
+        }
+        EvenType.Add("On after render normal");
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        EvenType.Add("On after render async");
+        await Task.Delay(1000);
+    }
+    protected override bool ShouldRender()
+    {
+        EvenType.Add("Should render has been called");
+        return true;
+    }
+    void StartCountDown()
+    {
+        var timer = new Timer(TimerCallBack, null, 1000, 1000);
+    }
+    void TimerCallBack(object state)
+    {
+        if (count > 0)
+        {
+            count--;
+            InvokeAsync(StateHasChanged);
+        }
+    }
+}

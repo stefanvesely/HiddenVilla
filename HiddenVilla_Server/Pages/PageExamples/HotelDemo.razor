@@ -5,31 +5,26 @@
 <div class="border p-2 mt-2" style="background-color:azure">
 	<h2 class="text-info"> Room List [USING COMPONENT]</h2>
 	<div class="row container">
+		<div class="col-12">
+			<h4 class="text-info">Hotel Room's</h4>
+		</div>
 		@foreach(var Room in RoomsList)
 		{
-		<div class="bg-light border p-2 col-5">
-			<h4 class="text-secondary"> Room - @Room.Id</h4>
-			@Room.RoomName<br />
-			@Room.Price.ToString("c")<br />
-			<input type="checkbox" @bind-value="Room.IsActive" checked="("/> &nbsp; IsActive<br/>
-			<span>This Room is @(Room.IsActive?"Active":"InActive")</span><br />
-			@if (Room.IsActive)
-				{
-					@foreach(var RoomProperty in Room.RoomProps)
-					{
-						<p>@RoomProperty.Name - @RoomProperty.Value</p>
-					}
-				}
-				<input type ="button" class="btn btn-danger" value="Delete"/>
-				<input type ="button" class="btn btn-success" value="Edit"/>
-		</div>
+			<RoomComponent Room="@Room"></RoomComponent>			
 		}
+		<div class="col-12 mt-4">
+			<h4 class="text-info">Hotel Amenities[assinment]</h4>
+		</div>
+		@foreach(var Amenity in AmenityList)
+		{
+			<AmenityComponent Amenity="@Amenity"></AmenityComponent>
+		}		
 	</div>
 </div>
 @code
 {
 	List<BlazorRoom> RoomsList = new List<BlazorRoom>();
-	
+	List<BlazorAmenities> AmenityList = new List<BlazorAmenities>();
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
@@ -58,6 +53,25 @@
 				new RoomProperites{Id=2, Name="Occupancy", Value ="6"}
 			}
 
+		});
+
+		AmenityList.Add(new BlazorAmenities()
+		{
+			Id = 1,
+			Name = "Gym",
+            Description = "24X7 Gym"			
+		});
+		AmenityList.Add(new BlazorAmenities()
+		{
+			Id = 2,
+			Name = "Pool",
+            Description = "There is an indoor pool open from 6pm till 10am"			
+		});
+		AmenityList.Add(new BlazorAmenities()
+		{
+			Id = 3,
+			Name = "Free Breakfast",
+            Description = "Nom nom in da' morning, nom nom till you be full Yo!"			
 		});
 	}
 }
