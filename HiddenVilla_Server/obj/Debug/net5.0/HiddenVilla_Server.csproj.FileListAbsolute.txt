@@ -72,3 +72,11 @@ C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razo
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\LifeCycle.razor.g.cs
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\LifeCycle.razor.g.cs
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\LifeCycleComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\PageExamples\ParentComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\ChildComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\ParentComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\ChildComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\SecondChildComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\SecondChildComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\ChildofaChildComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\ChildofaChildComponent.razor.g.cs

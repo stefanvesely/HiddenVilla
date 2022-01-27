@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HiddenVilla_Server.Pages.RazorComponentFolder
+namespace HiddenVilla_Server.Pages.PageExamples
 {
     #line hidden
     using System;
@@ -96,7 +96,8 @@ using HiddenVilla_Server.Model;
 #line default
 #line hidden
 #nullable disable
-    public partial class AmenityComponent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/ParentComponent")]
+    public partial class ParentComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,21 +105,21 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 7 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\AmenityComponent.razor"
+#line 12 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\ParentComponent.razor"
        
-	[Parameter]
-	public BlazorAmenities Amenity { get; set; }
-    [Parameter]
-	public EventCallback<string> OnAmenitySelection { get; set; }
-    [Parameter]
-	public RenderFragment FirstFragment { get; set; }
-	[Parameter]
-	public RenderFragment SecondFragment { get; set; }
+    /*
+    public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
+    {
+        {"required","required"},
+        {"placeholder","Parent Text"},
+        {"maxlength",5}
+    };*/
 
-	protected async Task AmenitySelctionChanged(MouseEventArgs e, string Name)
-	{
-		await OnAmenitySelection.InvokeAsync(Name.ToString());
-	}
+    private string message = "";
+    private void ShowMessage(MouseEventArgs e)
+    {
+        message = "Button is clicked from parent";
+    }
 
 #line default
 #line hidden

@@ -96,7 +96,7 @@ using HiddenVilla_Server.Model;
 #line default
 #line hidden
 #nullable disable
-    public partial class AmenityComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class ChildofaChildComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,21 +104,10 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 7 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\AmenityComponent.razor"
+#line 4 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\ChildofaChildComponent.razor"
        
-	[Parameter]
-	public BlazorAmenities Amenity { get; set; }
     [Parameter]
-	public EventCallback<string> OnAmenitySelection { get; set; }
-    [Parameter]
-	public RenderFragment FirstFragment { get; set; }
-	[Parameter]
-	public RenderFragment SecondFragment { get; set; }
-
-	protected async Task AmenitySelctionChanged(MouseEventArgs e, string Name)
-	{
-		await OnAmenitySelection.InvokeAsync(Name.ToString());
-	}
+    public string messageforgrandchild { get; set; }
 
 #line default
 #line hidden

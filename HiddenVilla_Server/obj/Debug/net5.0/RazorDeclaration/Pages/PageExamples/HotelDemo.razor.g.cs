@@ -105,7 +105,7 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
+#line 31 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\HotelDemo.razor"
  
 	public int RoomsSelected = 0;
 	public string SelectedAmenity { get; set; } = "";

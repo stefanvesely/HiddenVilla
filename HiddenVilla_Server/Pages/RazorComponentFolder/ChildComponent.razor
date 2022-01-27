@@ -1,0 +1,29 @@
+﻿<div>
+    <div class="alert alert-info">@Title</div>
+    <div class="alert alert-success">
+        @if (ChildContent == null)
+        {
+            <span>Empty Render Fragment Passed</span>
+            <button class="btn btn-danger" @onclick="OnClickBtnMethod">Click me to trigger in parent!</button>
+        }
+        else
+        {
+             <span>@ChildContent</span>
+             <span>@ChildContent2</span>
+        }
+    </div>
+    <ChildofaChildComponent messageforgrandchild="@MessageFromParentForGrandChild"></ChildofaChildComponent>
+    <ChildofaChildComponent messageforgrandchild="This is from the original child"></ChildofaChildComponent>
+</div>
+@code {
+    [Parameter]
+    public string Title { get; set; }
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+    [Parameter]
+    public RenderFragment ChildContent2 { get; set; }
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClickBtnMethod { get; set; }
+     [Parameter]
+    public string MessageFromParentForGrandChild { get; set; }
+}

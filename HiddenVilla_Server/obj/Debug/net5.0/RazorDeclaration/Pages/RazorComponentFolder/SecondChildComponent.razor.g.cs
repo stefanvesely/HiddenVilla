@@ -96,7 +96,7 @@ using HiddenVilla_Server.Model;
 #line default
 #line hidden
 #nullable disable
-    public partial class AmenityComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class SecondChildComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,21 +104,23 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 7 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\AmenityComponent.razor"
+#line 6 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\SecondChildComponent.razor"
        
-	[Parameter]
-	public BlazorAmenities Amenity { get; set; }
-    [Parameter]
-	public EventCallback<string> OnAmenitySelection { get; set; }
-    [Parameter]
-	public RenderFragment FirstFragment { get; set; }
-	[Parameter]
-	public RenderFragment SecondFragment { get; set; }
-
-	protected async Task AmenitySelctionChanged(MouseEventArgs e, string Name)
-	{
-		await OnAmenitySelection.InvokeAsync(Name.ToString());
-	}
+    /*
+                [Parameter]
+                public string Placeholder { get; set; } = "Placeholder Text";
+                [Parameter]
+                public string Required { get; set; } = "required";
+                [Parameter]
+                public string MaxLength { get; set; } = "10";*/
+    [Parameter(CaptureUnmatchedValues =true)]
+    public Dictionary<string, object> InputAttributes { get; set; } = new Dictionary<string, object>();
+    /*{
+        {"required","required"},
+        {"placeholder","Placeholder Text"},
+        {"maxlength",10}
+    };*/
+   
 
 #line default
 #line hidden
