@@ -80,3 +80,7 @@ C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razo
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\SecondChildComponent.razor.g.cs
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\RazorComponentFolder\ChildofaChildComponent.razor.g.cs
 C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\RazorComponentFolder\ChildofaChildComponent.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\PageExamples\RoutingExample.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\RoutingExample.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\RazorDeclaration\Pages\PageExamples\AdvancedRouting.razor.g.cs
+C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\obj\Debug\net5.0\Razor\Pages\PageExamples\AdvancedRouting.razor.g.cs

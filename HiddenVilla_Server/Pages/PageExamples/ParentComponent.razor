@@ -1,23 +1,30 @@
 ﻿@page "/ParentComponent"
 <h1 class="text-danger">Parent Child Component</h1>
-<ChildComponent Title="This title is passed from Parent Component">
-    <ChildContent>Render Fragment from Parent!</ChildContent>
-    <ChildContent2>Second Render Fragment!</ChildContent2>
-</ChildComponent>
 
-<ChildComponent OnClickBtnMethod="ShowMessage" Title="This is the button call with empty fragment" MessageFromParentForGrandChild="This Message Comes from Parent"></ChildComponent>
+    <ChildComponent Title="This title is passed from Parent Component">
+        <ChildContent>Render Fragment from Parent!</ChildContent>
+        <ChildContent2>Second Render Fragment!</ChildContent2>
+    </ChildComponent>
+
+<CascadingValue Value=@messageforgrandchild Name="MessageFromGP">
+    <CascadingValue Value=@LuckyNumber Name="LNFromGP">
+        <ChildComponent OnClickBtnMethod="ShowMessage" Title="This is the button call with empty fragment">
+        </ChildComponent>
+    </CascadingValue>
+</CascadingValue>
 <SecondChildComponent placeholder="Placeholder default"></SecondChildComponent>
 <p><b>@message</b></p>
 
 @code {
     /*
-    public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
-    {
-        {"required","required"},
-        {"placeholder","Parent Text"},
-        {"maxlength",5}
-    };*/
-
+        public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
+            {
+            {"required","required"},
+            {"placeholder","Parent Text"},
+            {"maxlength",5}
+        };*/
+    private string messageforgrandchild = "This Message Comes from Parent Cascading Test";
+    public int LuckyNumber { get; set; } = 7;
     private string message = "";
     private void ShowMessage(MouseEventArgs e)
     {

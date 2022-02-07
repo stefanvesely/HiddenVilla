@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HiddenVilla_Server.Shared
+namespace HiddenVilla_Server.Pages.PageExamples
 {
     #line hidden
     using System;
@@ -96,7 +96,12 @@ using HiddenVilla_Server.Model;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Routing")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/AlsoRouting")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/AnotherRouting")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/RoutingWithParameter/{parameter1}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/RoutingWithParameter/{parameter1}/{parameter2}")]
+    public partial class RoutingExample : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,16 +109,12 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Shared\NavMenu.razor"
+#line 12 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\RoutingExample.razor"
        
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
+    [Parameter]
+    public string parameter1 { get; set; }
+    [Parameter]
+    public string parameter2 { get; set; }
 
 #line default
 #line hidden

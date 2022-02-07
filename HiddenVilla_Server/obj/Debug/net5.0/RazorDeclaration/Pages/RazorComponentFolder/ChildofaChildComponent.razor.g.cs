@@ -104,10 +104,13 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 4 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\ChildofaChildComponent.razor"
+#line 11 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\ChildofaChildComponent.razor"
        
-    [Parameter]
+    /*[Parameter]*/
+    [CascadingParameter(Name ="MessageFromGP")]
     public string messageforgrandchild { get; set; }
+    [CascadingParameter(Name ="LNFromGP")]
+    public int LuckyNumberFromGrandParent { get; set; }
 
 #line default
 #line hidden

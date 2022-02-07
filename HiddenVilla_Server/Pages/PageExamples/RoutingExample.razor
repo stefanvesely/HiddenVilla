@@ -1,0 +1,17 @@
+﻿@page "/Routing"
+@page "/AlsoRouting"
+@page "/AnotherRouting"
+@page "/RoutingWithParameter/{parameter1}"
+@page "/RoutingWithParameter/{parameter1}/{parameter2}"
+<h3>Routing Example</h3>
+<h4>Param 1 = @parameter1</h4>
+<h4>Param 2 = @parameter2</h4>
+<NavLink class="btn btn-secondary" href="AdvancedRouting?Param1=Blazing&Param2=Blazor">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Advanced Routing with a Query
+</NavLink>
+@code {
+    [Parameter]
+    public string parameter1 { get; set; }
+    [Parameter]
+    public string parameter2 { get; set; }
+}

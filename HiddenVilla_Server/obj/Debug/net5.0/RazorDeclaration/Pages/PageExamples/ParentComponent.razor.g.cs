@@ -105,16 +105,17 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\ParentComponent.razor"
+#line 18 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\ParentComponent.razor"
        
     /*
-    public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
-    {
-        {"required","required"},
-        {"placeholder","Parent Text"},
-        {"maxlength",5}
-    };*/
-
+        public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
+            {
+            {"required","required"},
+            {"placeholder","Parent Text"},
+            {"maxlength",5}
+        };*/
+    private string messageforgrandchild = "This Message Comes from Parent Cascading Test";
+    public int LuckyNumber { get; set; } = 7;
     private string message = "";
     private void ShowMessage(MouseEventArgs e)
     {

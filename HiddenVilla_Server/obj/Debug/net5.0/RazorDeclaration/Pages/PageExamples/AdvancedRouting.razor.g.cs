@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace HiddenVilla_Server.Shared
+namespace HiddenVilla_Server.Pages.PageExamples
 {
     #line hidden
     using System;
@@ -96,7 +96,8 @@ using HiddenVilla_Server.Model;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/AdvancedRouting")]
+    public partial class AdvancedRouting : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,20 +105,28 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 53 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Shared\NavMenu.razor"
+#line 12 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\AdvancedRouting.razor"
        
-    private bool collapseNavMenu = true;
+    private string param1;
+    private string param2;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    private void LoadParam()
     {
-        collapseNavMenu = !collapseNavMenu;
+        var absoluteURI = new Uri(NavigationManager.Uri);
+        var queryparam = System.Web.HttpUtility.ParseQueryString(absoluteURI.Query);
+        param1 = queryparam["Param1"];
+        param2 = queryparam["Param2"];
+    }
+
+    private void BackToRouting()
+    {
+        NavigationManager.NavigateTo("Routing");
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

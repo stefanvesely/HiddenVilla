@@ -12,8 +12,9 @@
              <span>@ChildContent2</span>
         }
     </div>
-    <ChildofaChildComponent messageforgrandchild="@MessageFromParentForGrandChild"></ChildofaChildComponent>
-    <ChildofaChildComponent messageforgrandchild="This is from the original child"></ChildofaChildComponent>
+    @*<ChildofaChildComponent messageforgrandchild="@MessageFromParentForGrandChild"></ChildofaChildComponent>*@
+    @*<ChildofaChildComponent messageforgrandchild="This is from the original child"></ChildofaChildComponent>*@
+    <ChildofaChildComponent></ChildofaChildComponent>
 </div>
 @code {
     [Parameter]
@@ -24,6 +25,6 @@
     public RenderFragment ChildContent2 { get; set; }
     [Parameter]
     public EventCallback<MouseEventArgs> OnClickBtnMethod { get; set; }
-     [Parameter]
-    public string MessageFromParentForGrandChild { get; set; }
+    /* [Parameter]
+    public string MessageFromParentForGrandChild { get; set; }*/
 }

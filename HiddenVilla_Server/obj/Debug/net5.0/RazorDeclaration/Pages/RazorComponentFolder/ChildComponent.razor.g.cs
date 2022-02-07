@@ -104,7 +104,7 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\ChildComponent.razor"
+#line 19 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\RazorComponentFolder\ChildComponent.razor"
        
     [Parameter]
     public string Title { get; set; }
@@ -114,8 +114,8 @@ using HiddenVilla_Server.Model;
     public RenderFragment ChildContent2 { get; set; }
     [Parameter]
     public EventCallback<MouseEventArgs> OnClickBtnMethod { get; set; }
-     [Parameter]
-    public string MessageFromParentForGrandChild { get; set; }
+    /* [Parameter]
+    public string MessageFromParentForGrandChild { get; set; }*/
 
 #line default
 #line hidden
