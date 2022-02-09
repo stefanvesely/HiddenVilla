@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MCM2rgYIbFCd/kqS+7TKk/VcB/vySzfd29bR7988WhxvVisSxzfiZmrPbRDneETyA79wXMXexLiVzkrjIVRrvA==",
+  "dgSpecHash": "UQwPki7pjw5jKUSchjEaGsRW9noc2fKle3U9h/lNzGSt3h4endCDkafyoXoKzJYuSDnzqrHLdaaGYKQvfywJqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Steff\\source\\repos\\HiddenVilla\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Steff\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Steff\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Steff\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Steff\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

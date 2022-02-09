@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4GsrCWtSEcpc6XAK+x85+34b60K9zD+tOZn+X2r53s06P39fKKHnwl4y0JpVYO2HJS8oHeZG7vZBCS4MaqJFHA==",
+  "dgSpecHash": "/LG1fhmEAoWVjtDhFz8wqR7yiClhA34A93teiLsIXarFh1FfubOYFN/QSDRJmZPW5bNrCsThXLTOqNbmKpUpkQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Steff\\source\\repos\\HiddenVilla\\Models\\Models.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Steff\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Steff\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
