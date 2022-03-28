@@ -96,6 +96,13 @@ using HiddenVilla_Server.Model;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using HiddenVilla_Server.Helper;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/ParentComponent")]
     public partial class ParentComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,15 +112,16 @@ using HiddenVilla_Server.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\ParentComponent.razor"
+#line 23 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\ParentComponent.razor"
        
-    /*
-        public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
-            {
-            {"required","required"},
-            {"placeholder","Parent Text"},
-            {"maxlength",5}
-        };*/
+            /*
+            public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
+                {
+                {"required","required"},
+                {"placeholder","Parent Text"},
+                {"maxlength",5}
+            };*/
+    private ChildComponent ChildComp;
     private string messageforgrandchild = "This Message Comes from Parent Cascading Test";
     public int LuckyNumber { get; set; } = 7;
     private string message = "";

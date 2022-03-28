@@ -1,0 +1,154 @@
+﻿@page "/hotel-room/create"
+@page "/hotel-room/edit/{id:int}"
+@using Models
+@using Business.Repository.IRepository
+@using HiddenVilla_Server.Service.IService
+@inject IHotelRoomRepository HotelRoomRepository
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+@inject IFileUpload FileUpload
+
+<div class="row mt-2 mb-5">
+    <h3 class="card-title text-info mb-3 ml-3">@Title Hotel Room</h3>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <EditForm Model="@HotelRoomModel" OnValidSubmit="@HandleRoomUpsert">
+                    <DataAnnotationsValidator/>
+                    @* <ValidationSummary/>*@
+                    <div class="form-group">
+                        <label>Name</label>
+                        <InputText @bind-Value="HotelRoomModel.Name" class="form-control"></InputText>
+                        <ValidationMessage For="()=>HotelRoomModel.Name"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>Occupancy</label>
+                        <InputNumber @bind-Value="HotelRoomModel.Occupancy" class="form-control"></InputNumber>
+                        <ValidationMessage For="()=>HotelRoomModel.Occupancy"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>Rate</label>
+                        <InputNumber @bind-Value="HotelRoomModel.RegularRate" class="form-control"></InputNumber>
+                        <ValidationMessage For="()=>HotelRoomModel.RegularRate"></ValidationMessage>
+                    </div>
+                     <div class="form-group">
+                        <label>Square Feet</label>
+                        <InputText @bind-Value="HotelRoomModel.SqFt" class="form-control"></InputText>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Details</label>
+                        <InputTextArea @bind-Value="HotelRoomModel.Details" class="form-control"></InputTextArea>
+                        
+                    </div>
+                     <div class="form-group">
+                       <InputFile OnChange="HandleImageUpload" multiple></InputFile>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">@Title Room</button>
+                        <NavLink href="hotel-room" class="btn btn-secondary">Back to Room List</NavLink>
+                    </div>
+                </EditForm>   
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public int? id { get; set; }
+
+
+    private HotelRoomDTO HotelRoomModel { get; set; } = new HotelRoomDTO();
+    private string Title { get; set; } = "Create";
+
+    protected async override Task OnInitializedAsync()
+    {
+        
+        if (id != null)
+        {
+            Title = "Update/Edit";
+            HotelRoomModel = await HotelRoomRepository.GetHotelRoom(id.Value);
+        }
+        else
+        {
+            HotelRoomModel = new HotelRoomDTO();
+        }
+    }
+
+    private async Task HandleRoomUpsert()
+    {
+       
+       try
+       {
+            var RoomDetailsByName = await HotelRoomRepository.IsSameNameRoomAlreadyPresent(HotelRoomModel.Name, HotelRoomModel.Id);
+            if(RoomDetailsByName!=null)
+            {
+                await JsRuntime.ToastrFailure("Room Name Exists");
+                return;
+            }        
+            if (HotelRoomModel.Id!=0 && Title == "Update/Edit")
+            {
+                var UpdateRoomResult = await HotelRoomRepository.UpdateHotelRoom(HotelRoomModel.Id, HotelRoomModel);
+                await JsRuntime.ToastrSuccess("Room Updated!");
+            }
+            else
+            {
+                var createdresult = await HotelRoomRepository.CreateHotelRoom(HotelRoomModel);
+                await JsRuntime.ToastrSuccess("Room Created!");
+            }
+
+       }
+       catch
+       {
+            
+       }
+       
+       NavigationManager.NavigateTo("hotel-room");        
+    }
+    private async Task HandleImageUpload(InputFileChangeEventArgs e)
+    {
+        try
+        {
+         var image = new List<string>();
+         if (e.GetMultipleFiles().Count > 0)
+            {
+                foreach (var file in e.GetMultipleFiles())
+                {
+                    System.IO.FileInfo fileinfo = new System.IO.FileInfo(file.Name);
+                    if(fileinfo.Extension.ToLower() == ".jpg" || fileinfo.Extension.ToLower() == ".png" || fileinfo.Extension.ToLower() == ".jpeg")
+                    {
+                        var uploadimagepath = await FileUpload.UploadFile(file);
+                        image.Add(uploadimagepath);
+                    }
+                    else
+                    {
+                        await JsRuntime.ToastrFailure("Please select only images with .png , .jpg, or .jpeg extensions.");                        
+                    }
+                }
+                if (image.Any())
+                {
+                    if(HotelRoomModel.ImageUrls!=null && HotelRoomModel.ImageUrls.Any())
+                    {
+                        HotelRoomModel.ImageUrls.AddRange(image);
+                    }
+                    else
+                    {
+                        HotelRoomModel.ImageUrls = new List<string>();
+                        HotelRoomModel.ImageUrls.AddRange(image);
+                    }
+                }
+                else
+                {
+                    await JsRuntime.ToastrFailure("Image Uploading Failed");
+                    return;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            await JsRuntime.ToastrFailure(ex.Message);
+        }
+    }
+}

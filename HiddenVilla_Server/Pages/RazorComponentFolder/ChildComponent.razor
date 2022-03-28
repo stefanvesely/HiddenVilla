@@ -1,4 +1,5 @@
-﻿<div>
+﻿@inject IJSRuntime JsRuntime
+<div>
     <div class="alert alert-info">@Title</div>
     <div class="alert alert-success">
         @if (ChildContent == null)
@@ -27,4 +28,9 @@
     public EventCallback<MouseEventArgs> OnClickBtnMethod { get; set; }
     /* [Parameter]
     public string MessageFromParentForGrandChild { get; set; }*/
+
+    public async Task ShowSuccess()
+    {
+        await JsRuntime.ToastrSuccess("Child Success Message");
+    }
 }

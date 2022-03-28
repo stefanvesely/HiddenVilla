@@ -94,6 +94,13 @@ using HiddenVilla_Server.Model;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using HiddenVilla_Server.Helper;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Steff\source\repos\HiddenVilla\HiddenVilla_Server\Pages\PageExamples\BindProperty.razor"
 using Model;
 

@@ -1,4 +1,5 @@
 ﻿@page "/ParentComponent"
+
 <h1 class="text-danger">Parent Child Component</h1>
 
     <ChildComponent Title="This title is passed from Parent Component">
@@ -8,21 +9,26 @@
 
 <CascadingValue Value=@messageforgrandchild Name="MessageFromGP">
     <CascadingValue Value=@LuckyNumber Name="LNFromGP">
-        <ChildComponent OnClickBtnMethod="ShowMessage" Title="This is the button call with empty fragment">
+        <ChildComponent @ref="ChildComp"
+        OnClickBtnMethod="ShowMessage" 
+        Title="This is the button call with empty fragment">
         </ChildComponent>
     </CascadingValue>
 </CascadingValue>
 <SecondChildComponent placeholder="Placeholder default"></SecondChildComponent>
 <p><b>@message</b></p>
-
+<div class="row">
+    <button class="btn btn-success" @onclick="()=>ChildComp.ShowSuccess()">Show Success from Child Component</button>
+</div>
 @code {
-    /*
-        public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
-            {
-            {"required","required"},
-            {"placeholder","Parent Text"},
-            {"maxlength",5}
-        };*/
+            /*
+            public Dictionary<string, object> ParentAttributes { get; set; } = new Dictionary<string, object>()
+                {
+                {"required","required"},
+                {"placeholder","Parent Text"},
+                {"maxlength",5}
+            };*/
+    private ChildComponent ChildComp;
     private string messageforgrandchild = "This Message Comes from Parent Cascading Test";
     public int LuckyNumber { get; set; } = 7;
     private string message = "";
